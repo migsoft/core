@@ -74,26 +74,28 @@
 HFONT PrepareFont( const char * FontName, int FontSize, int Weight, int Italic, int Underline, int StrikeOut, int Escapement, int Orientation )
 {
    HDC hDC;
-   int cyp;
+   int cyp,nHeight,nWidth,nEscapement,nOrientation,fnWeight;
+   DWORD fdwItalic,fdwUnderline,fdwStrikeOut,fdwCharSet,fdwOutputPrecision,fdwClipPrecision,fdwQuality,fdwPitchAndFamily;
+   LPCTSTR lpszFace;
 
    hDC = GetDC( HWND_DESKTOP );
    cyp = GetDeviceCaps( hDC, LOGPIXELSY );
    ReleaseDC( HWND_DESKTOP, hDC );
 
-  int     nHeight            = 0 - ( FontSize * cyp ) / 72;
-  int     nWidth             = 0;
-  int     nEscapement        = Escapement;
-  int     nOrientation       = Orientation;
-  int     fnWeight           = Weight;
-  DWORD   fdwItalic          = (DWORD) Italic;
-  DWORD   fdwUnderline       = (DWORD) Underline;
-  DWORD   fdwStrikeOut       = (DWORD) StrikeOut;
-  DWORD   fdwCharSet         = (DWORD) DEFAULT_CHARSET;
-  DWORD   fdwOutputPrecision = (DWORD) OUT_TT_PRECIS;
-  DWORD   fdwClipPrecision   = (DWORD) CLIP_DEFAULT_PRECIS;
-  DWORD   fdwQuality         = (DWORD) DEFAULT_QUALITY;
-  DWORD   fdwPitchAndFamily  = (DWORD) FF_DONTCARE;
-  LPCTSTR lpszFace           = (LPCTSTR) FontName;
+          nHeight            = 0 - ( FontSize * cyp ) / 72;
+          nWidth             = 0;
+          nEscapement        = Escapement;
+          nOrientation       = Orientation;
+          fnWeight           = Weight;
+          fdwItalic          = (DWORD) Italic;
+          fdwUnderline       = (DWORD) Underline;
+          fdwStrikeOut       = (DWORD) StrikeOut;
+          fdwCharSet         = (DWORD) DEFAULT_CHARSET;
+          fdwOutputPrecision = (DWORD) OUT_TT_PRECIS;
+          fdwClipPrecision   = (DWORD) CLIP_DEFAULT_PRECIS;
+          fdwQuality         = (DWORD) DEFAULT_QUALITY;
+          fdwPitchAndFamily  = (DWORD) FF_DONTCARE;
+          lpszFace           = (LPCTSTR) FontName;
 
    return CreateFont( nHeight, nWidth, nEscapement, nOrientation, fnWeight, fdwItalic, fdwUnderline, fdwStrikeOut,
       fdwCharSet, fdwOutputPrecision, fdwClipPrecision, fdwQuality, fdwPitchAndFamily, lpszFace );
