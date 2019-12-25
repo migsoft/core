@@ -280,13 +280,11 @@ typedef enum THEMESIZE {
 
 typedef int (WINAPI *DTT_CALLBACK_PROC)(HDC hdc,LPWSTR pszText,int cchText,LPRECT prc,UINT dwFlags,LPARAM lParam);
 
-#ifdef __BORLANDC__
+
+#ifndef __GNUC__
 typedef BOOL WINBOOL;
 #endif
 
-#ifdef __POCC__
-typedef BOOL WINBOOL;
-#endif
 
 typedef struct _DTTOPTS {
     DWORD dwSize;

@@ -70,7 +70,8 @@
 #include "hbapi.h"
 #include "oohg.h"
 
-HFONT PrepareFont( char *FontName, int FontSize, int Weight, int Italic, int Underline, int StrikeOut, int Escapement, int Orientation )
+
+HFONT PrepareFont( const char * FontName, int FontSize, int Weight, int Italic, int Underline, int StrikeOut, int Escapement, int Orientation )
 {
    HDC hDC;
    int cyp;
@@ -96,6 +97,7 @@ HFONT PrepareFont( char *FontName, int FontSize, int Weight, int Italic, int Und
 
    return CreateFont( nHeight, nWidth, nEscapement, nOrientation, fnWeight, fdwItalic, fdwUnderline, fdwStrikeOut,
       fdwCharSet, fdwOutputPrecision, fdwClipPrecision, fdwQuality, fdwPitchAndFamily, lpszFace );
+
 }
 
 HB_FUNC( _SETFONT )

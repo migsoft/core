@@ -709,11 +709,7 @@ typedef enum THEMESIZE {
 
 typedef int (WINAPI *DTT_CALLBACK_PROC)(HDC hdc,LPWSTR pszText,int cchText,LPRECT prc,UINT dwFlags,LPARAM lParam);
 
-#ifdef __BORLANDC__
-typedef BOOL WINBOOL;
-#endif
-
-#ifdef __POCC__
+#ifndef __GNUC__
 typedef BOOL WINBOOL;
 #endif
 
