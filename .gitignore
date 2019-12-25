@@ -2,6 +2,8 @@
 compres.bat
 xhbcc.bat
 resul.txt
+/lib/hb
+/lib/xhb
 
 # Windows image file caches
 Thumbs.db

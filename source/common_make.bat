@@ -30,29 +30,29 @@ rem
 
 :PRG_COMPILE
 
-   echo Compiling prg files ...
+   echo ! Compiling prg files ...
    for %%a in ( %HG_FILES1_PRG% %HG_FILES2_PRG% ) do (
-      %HG_HRB%\%BIN_HRB%\harbour %%a %OOHG_X_FLAGS% %~3
+      %HG_HRB%\%BIN_HRB%\harbour %%a %OOHG_X_FLAGS% %~3 >> common_build.log 2>&1
       if errorlevel 1 (
          set OOHG_FILE=%%a
          goto ERROR ) )
-   if exist winprint.prg  %HG_HRB%\%BIN_HRB%\harbour winprint  %OOHG_X_FLAGS% %~3
+   if exist winprint.prg  %HG_HRB%\%BIN_HRB%\harbour winprint  %OOHG_X_FLAGS% %~3 >> common_build.log 2>&1
    if errorlevel 1 goto ERROR
-   if exist miniprint.prg %HG_HRB%\%BIN_HRB%\harbour miniprint %OOHG_X_FLAGS% %~3
+   if exist miniprint.prg %HG_HRB%\%BIN_HRB%\harbour miniprint %OOHG_X_FLAGS% %~3 >> common_build.log 2>&1
    if errorlevel 1 goto ERROR
-   if exist bostaurus.prg %HG_HRB%\%BIN_HRB%\harbour bostaurus %OOHG_X_FLAGS% %~3
+   if exist bostaurus.prg %HG_HRB%\%BIN_HRB%\harbour bostaurus %OOHG_X_FLAGS% %~3 >> common_build.log 2>&1
    if errorlevel 1 goto ERROR
    goto END
 
 :INFO
 
-   echo This file must be called from MAKELIB.BAT !!!
+   echo ! This file must be called from MAKELIB.BAT !!!
    echo .
    goto END
 
 :ERROR
 
-   if not .%3.==.. echo Error compiling %OOHG_FILE%.prg !!!
+   if not .%3.==.. echo ! Error compiling %OOHG_FILE%.prg !!!
    if not .%3.==.. echo .
    set OOHG_FILE=
 
