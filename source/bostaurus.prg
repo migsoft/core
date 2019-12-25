@@ -3243,7 +3243,7 @@ Light_Level = -255 To +255
 #define BT_BITMAP_LIGHT_BLACK -255
 #define BT_BITMAP_LIGHT_NONE  0
 #define BT_BITMAP_LIGHT_WHITE 255
-
+#define M_PI 3.14159265358979323846
 
 typedef struct {
    BYTE R;

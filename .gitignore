@@ -4,6 +4,8 @@ xhbcc.bat
 resul.txt
 /lib/hb
 /lib/xhb
+*.bat
+*
 
 # Windows image file caches
 Thumbs.db
