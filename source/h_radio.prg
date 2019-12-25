@@ -713,6 +713,10 @@ typedef int (WINAPI *DTT_CALLBACK_PROC)(HDC hdc,LPWSTR pszText,int cchText,LPREC
 typedef BOOL WINBOOL;
 #endif
 
+#ifdef __POCC__
+typedef BOOL WINBOOL;
+#endif
+
 typedef struct _DTTOPTS {
     DWORD dwSize;
     DWORD dwFlags;

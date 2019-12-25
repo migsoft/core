@@ -4,6 +4,7 @@ xhbcc.bat
 resul.txt
 /lib/hb
 /lib/xhb
+*.hbx
 *.bat
 *
 

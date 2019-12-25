@@ -219,6 +219,8 @@ METHOD KeyDelete( cSubKey ) CLASS TReg32
 #include "hbapiitm.h"
 #include "oohg.h"
 
+typedef LONG LSTATUS;
+
 //------------------------------------------------------------------------------
 HB_FUNC( REGCLOSEKEY )
 //------------------------------------------------------------------------------
