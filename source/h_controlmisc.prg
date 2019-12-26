@@ -2077,10 +2077,13 @@ HB_FUNC( EVENTS_COLOR_INTAB )
       {
          _OOHG_Send( pSelf, s_oBkGrnd );
          hb_vmSend( 0 );
-         oBkGrnd = hb_param( -1, HB_IT_OBJECT );
-         if( oBkGrnd )
+//         oBkGrnd = hb_param( -1, HB_IT_OBJECT );
+         pBkGrnd = hb_param( -1, HB_IT_OBJECT );
+//         if( oBkGrnd )
+         if( pBkGrnd )
          {
-            _OOHG_Send( oBkGrnd, s_hWnd );
+//            _OOHG_Send( oBkGrnd, s_hWnd );
+            _OOHG_Send( pBkGrnd, s_hWnd );
             hb_vmSend( 0 );
             hwnd = HWNDparam( -1 );
 

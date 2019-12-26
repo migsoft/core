@@ -137,3 +137,4 @@ REQUEST DBFNTX, DBFDBT
 REQUEST HB_GTSYS
 
 #endif
+#include "mpm_gt.ch"
